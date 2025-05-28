@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ejercicios JavaScript: Arreglos y Ciclos</title>
+  <link rel="stylesheet" href="/ejercicios-arreglos-ciclos/assets/css/styles.css" />
+</head>
+<body>
+  <h1>Ejercicios JavaScript - Arreglos y Ciclos</h1>
+
+  <div class="botones">
+    <button onclick="importarEjercicio(1)">Ejercicio 1</button>
+    <button onclick="importarEjercicio(2)">Ejercicio 2</button>
+    <button onclick="importarEjercicio(3)">Ejercicio 3</button>
+    <button onclick="importarEjercicio(4)">Ejercicio 4</button>
+    <button onclick="importarEjercicio(5)">Ejercicio 5</button>
+    <button onclick="importarEjercicio(6)">Ejercicio 6</button>
+  </div>
+
+  <div id="resultado" class="resultado"></div>
+
+  <script>
+    function importarEjercicio(num) {
+      // Eliminar scripts anteriores
+      document.querySelectorAll('script[data-ejercicio]').forEach(el => el.remove());
+
+      // Limpiar resultado anterior
+      document.getElementById('resultado').innerHTML = "";
+
+      // Cargar script desde ruta absoluta
+      const script = document.createElement('script');
+      script.type = "module";
+      script.src = `/ejercicios-arreglos-ciclos/ejercicios/ejercicio${num}.js?v=${Math.random()}`;
+      script.setAttribute('data-ejercicio', 'true');
+      document.body.appendChild(script);
+    }
+  </script>
+</body>
+</html>
