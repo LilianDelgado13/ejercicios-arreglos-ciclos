@@ -4,39 +4,29 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Ejercicios JavaScript: Arreglos y Ciclos</title>
-  <link rel="stylesheet" href="/ejercicios-arreglos-ciclos/assets/css/styles.css" />
+  <link rel="stylesheet" href="./assets/css/styles.css" />
 </head>
 <body>
   <h1>Ejercicios JavaScript - Arreglos y Ciclos</h1>
 
   <div class="botones">
-    <button onclick="importarEjercicio(1)">Ejercicio 1</button>
-    <button onclick="importarEjercicio(2)">Ejercicio 2</button>
-    <button onclick="importarEjercicio(3)">Ejercicio 3</button>
-    <button onclick="importarEjercicio(4)">Ejercicio 4</button>
-    <button onclick="importarEjercicio(5)">Ejercicio 5</button>
-    <button onclick="importarEjercicio(6)">Ejercicio 6</button>
+    <button onclick="ejercicio1()">Ejercicio 1</button>
+    <button onclick="ejercicio2()">Ejercicio 2</button>
+    <button onclick="ejercicio3()">Ejercicio 3</button>
+    <button onclick="ejercicio4()">Ejercicio 4</button>
+    <button onclick="ejercicio5()">Ejercicio 5</button>
+    <button onclick="ejercicio6()">Ejercicio 6</button>
   </div>
 
   <div id="resultado" class="resultado">
     <p>Selecciona un ejercicio para ver el resultado aquí.</p>
   </div>
 
-  <script>
-    function importarEjercicio(num) {
-      // Eliminar scripts anteriores
-      document.querySelectorAll('script[data-ejercicio]').forEach(el => el.remove());
-
-      // Limpiar resultado anterior
-      document.getElementById('resultado').innerHTML = "";
-
-      // Cargar el nuevo script desde una ruta absoluta (para GitHub Pages)
-      const script = document.createElement('script');
-      script.type = "module";
-      script.src = `/ejercicios-arreglos-ciclos/ejercicios/ejercicio${num}.js?v=${Math.random()}`;
-      script.setAttribute('data-ejercicio', 'true');
-      document.body.appendChild(script);
-    }
-  </script>
+  <script src="./ejercicios/ejercicio1.js"></script>
+  <script src="./ejercicios/ejercicio2.js"></script>
+  <script src="./ejercicios/ejercicio3.js"></script>
+  <script src="./ejercicios/ejercicio4.js"></script>
+  <script src="./ejercicios/ejercicio5.js"></script>
+  <script src="./ejercicios/ejercicio6.js"></script>
 </body>
 </html>

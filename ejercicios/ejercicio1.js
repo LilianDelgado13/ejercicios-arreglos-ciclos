@@ -1,6 +1,5 @@
-window.addEventListener('DOMContentLoaded', () => {
+function ejercicio1() {
     const resultadoDiv = document.getElementById('resultado');
-  
     const arr = ["This", "is", "a", "sentence."];
   
     function printOutString() {
@@ -15,5 +14,4 @@ window.addEventListener('DOMContentLoaded', () => {
       <p><strong>Frase resultante:</strong> "${frase}"</p>
       <p><strong>Método usado:</strong> <code>arr.join(" ")</code></p>
     `;
-  });
-  
+  }

@@ -1,19 +1,12 @@
-window.addEventListener('DOMContentLoaded', () => {
+function ejercicio2() {
     const resultadoDiv = document.getElementById('resultado');
-  
-    const arr = ["This", "is", "a", "sentence."];
-  
-    function printOutString() {
-        return arr.join(" ");
-    }
-  
-    const frase = printOutString();
+    const numeros = [1, 2, 3, 4, 5];
+    const duplicados = numeros.map(num => num * 2);
   
     resultadoDiv.innerHTML = `
-        <h2>Ejercicio 1: Unir palabras en una frase</h2>
-        <p><strong>Arreglo original:</strong> [${arr.join(', ')}]</p>
-        <p><strong>Frase resultante:</strong> "${frase}"</p>
-        <p><strong>Método usado:</strong> <code>arr.join(" ")</code></p>
+      <h2>Ejercicio 2: Duplicar valores</h2>
+      <p><strong>Original:</strong> [${numeros.join(', ')}]</p>
+      <p><strong>Duplicados:</strong> [${duplicados.join(', ')}]</p>
+      <p><strong>Método usado:</strong> <code>map()</code></p>
     `;
-  });
-  
+  }

@@ -1,15 +1,22 @@
-window.addEventListener('DOMContentLoaded', () => {
+function ejercicio6() {
     const resultadoDiv = document.getElementById('resultado');
   
+    // Implementación del algoritmo Bubble Sort
     function bubbleSort(arr) {
-      const sorted = [...arr];
-      for (let i = 0; i < sorted.length; i++) {
-        for (let j = 0; j < sorted.length - i - 1; j++) {
-          if (sorted[j] > sorted[j + 1]) {
-            [sorted[j], sorted[j + 1]] = [sorted[j + 1], sorted[j]];
+      const sorted = [...arr]; // Creamos una copia del array original
+      let swaps; // Variable para controlar si hubo intercambios
+      
+      do {
+        swaps = false;
+        for (let i = 0; i < sorted.length - 1; i++) {
+          if (sorted[i] > sorted[i + 1]) {
+            // Intercambiamos elementos
+            [sorted[i], sorted[i + 1]] = [sorted[i + 1], sorted[i]];
+            swaps = true;
           }
         }
-      }
+      } while (swaps); // Continuamos hasta que no haya más intercambios
+      
       return sorted;
     }
   
@@ -17,10 +24,30 @@ window.addEventListener('DOMContentLoaded', () => {
     const sorted = bubbleSort(original);
   
     resultadoDiv.innerHTML = `
-      <h2>Ejercicio 6: Bubble Sort</h2>
-      <p><strong>Original:</strong> [${original.join(', ')}]</p>
-      <p><strong>Ordenado:</strong> [${sorted.join(', ')}]</p>
-      <p><strong>Método usado:</strong> <code>Bubble Sort</code></p>
+      <h2>Ejercicio 6: Algoritmo Bubble Sort</h2>
+      <div class="algoritmo-explicacion">
+        <p>El bubble sort es un algoritmo de ordenamiento que compara elementos adyacentes y los intercambia si están en el orden incorrecto.</p>
+      </div>
+      <p><strong>Array original:</strong> [${original.join(', ')}]</p>
+      <p><strong>Array ordenado:</strong> [${sorted.join(', ')}]</p>
+      <div class="codigo">
+        <p><strong>Método implementado:</strong></p>
+        <pre><code>function bubbleSort(arr) {
+    const sorted = [...arr];
+    let swaps;
+    
+    do {
+      swaps = false;
+      for (let i = 0; i < sorted.length - 1; i++) {
+        if (sorted[i] > sorted[i + 1]) {
+          [sorted[i], sorted[i + 1]] = [sorted[i + 1], sorted[i]];
+          swaps = true;
+        }
+      }
+    } while (swaps);
+    
+    return sorted;
+  }</code></pre>
+      </div>
     `;
-  });
-  
+  }

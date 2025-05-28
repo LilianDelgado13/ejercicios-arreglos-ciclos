@@ -1,4 +1,4 @@
-window.addEventListener('DOMContentLoaded', () => {
+function ejercicio3() {
     const resultadoDiv = document.getElementById('resultado');
   
     const array = [1, 2, 3, 4];
@@ -12,5 +12,4 @@ window.addEventListener('DOMContentLoaded', () => {
       <p><strong>Producto:</strong> ${producto}</p>
       <p><strong>Método usado:</strong> <code>reduce()</code></p>
     `;
-  });
-  
+  }
