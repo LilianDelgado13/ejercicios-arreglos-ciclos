@@ -18,7 +18,9 @@
     <button onclick="importarEjercicio(6)">Ejercicio 6</button>
   </div>
 
-  <div id="resultado" class="resultado"></div>
+  <div id="resultado" class="resultado">
+    <p>Selecciona un ejercicio para ver el resultado aquí.</p>
+  </div>
 
   <script>
     function importarEjercicio(num) {
@@ -28,7 +30,7 @@
       // Limpiar resultado anterior
       document.getElementById('resultado').innerHTML = "";
 
-      // Cargar script desde ruta absoluta
+      // Cargar el nuevo script desde una ruta absoluta (para GitHub Pages)
       const script = document.createElement('script');
       script.type = "module";
       script.src = `/ejercicios-arreglos-ciclos/ejercicios/ejercicio${num}.js?v=${Math.random()}`;
